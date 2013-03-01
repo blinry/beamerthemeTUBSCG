@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usetheme{TUBSCG}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Show the table of contents at the beginning of each section
+\AtBeginSection[]
+{
+    \begin{frame}<beamer>{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+%\beamerdefaultoverlayspecification{<+->} % Uncover items one by one by default
+\setbeamertemplate{navigation symbols}{} % Hide the navigation symbols
+
+\title[TUBSCG Theme]{The TUBSCG \LaTeX\ Beamer Theme}
+\subtitle{Setup and Usage}
+\author[S.~Morr]{Sebastian Morr}
+\institute{Computer Graphics Lab\\TU Braunschweig}
+\date{2013-03-01}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Setup}
+
+\begin{frame}
+    \frametitle{Prerequisites}
+
+    You'll need:
+
+    \begin{itemize}
+        \item A \LaTeX\ distribution -- for Linux, try \alert{TeX Live}
+        \item The \texttt{beamer} package. It's probably already installed
+        \item Git (if you want to do the advanced setup)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dumb Setup}
+
+    This is the dump, inflexible approach. Advantage: It's easy. Disadvantages:
+    
+    \begin{itemize}
+        \item You'll duplicate the .sty each time you create a new presentation
+        \item You won't benefit from any improvements of the theme on GitHub
+    \end{itemize}
+
+    Here's how to do it:
+
+    \begin{enumerate}
+        \item Download \url{https://github.com/tubs-cg/beamerthemeTUBSCG/archive/master.zip}
+        \item Unzip, rename the folder to something nice
+        \item Rename \texttt{example.tex} to anything you like and start editing it. You're done.
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Advanced Setup}
+
+    Here, we'll create only one copy of the .sty that is used in all your presentations.
+
+    \begin{enumerate}
+        \item Move to a directory where you want to create the new theme folder
+        \item \footnotesize \texttt{git clone git://github.com/tubs-cg/beamerthemeTUBSCG} \normalsize
+        \item Find the beamer package directory. Usually, it's in \texttt{[texroot]/tex/latex/beamer}
+        \item Symlink \texttt{.../beamer/themes/theme/beamerthemeTUBSCG.sty} to the .sty in the newly cloned repository
+        \item Run \texttt{sudo texhash}, or the equivalent on your system
+    \end{enumerate}
+
+    Now copy \texttt{example.tex} and \texttt{cg-logo.png} somewhere nice. You're done.
+\end{frame}
+
+\section{Resources}
+
+\begin{frame}
+    \frametitle{Resources}
+
+    \begin{itemize}
+        \item The \texttt{beamer} user guide \href{http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{\beamergotobutton{Link}}
+        \item The Pro Git book \href{http://git-scm.com/book}{\beamergotobutton{Link}}
+    \end{itemize}
+\end{frame}
+
+\end{document}
